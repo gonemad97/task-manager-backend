@@ -11,6 +11,7 @@ def create_app():
 
     CORS(app)
 
+
     tasks_api.init_app(app)
     db.init_app(app)
 
