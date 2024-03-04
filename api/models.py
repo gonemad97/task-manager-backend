@@ -9,7 +9,6 @@ class Task(db.Model):
     description = db.Column(db.String(400), nullable=True)
     completed = db.Column(db.Boolean, default=False)
     deadline = db.Column(db.Date, nullable=True)
-    user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
 
     def save(self):
         db.session.add(self)
