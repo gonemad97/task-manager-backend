@@ -23,27 +23,3 @@ class Task(db.Model):
             "completed": self.completed,
             "deadline": str(self.deadline),
         }
-
-
-class User(db.Model):
-    id = db.Column(db.Integer(), primary_key=True, autoincrement=True)
-    username = db.Column(db.String(32), nullable=False)
-    password = db.Column(db.Text())
-
-    def save(self):
-        db.session.add(self)
-        db.session.commit()
-
-    def set_password(self, password):
-        self.password = password
-
-    def check_password(self, password):
-        return self.password == password
-
-    @classmethod
-    def get_by_id(cls, id):
-        return cls.query.filter_by(id=id).first()
-
-    @classmethod
-    def get_by_username(cls, username):
-        return cls.query.filter_by(username=username).first()
