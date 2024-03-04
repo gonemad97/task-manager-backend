@@ -1,6 +1,5 @@
-from flask import request, jsonify, make_response
-from flask_restx import Api, Resource, fields, reqparse
-import random
+from flask import request
+from flask_restx import Api, Resource
 
 from .rest_schema import *
 from .task_dao import TaskCRUD
